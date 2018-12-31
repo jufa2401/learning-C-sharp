@@ -28,7 +28,10 @@ namespace learningC_sharp
             Rectangle rectangle2 = new Rectangle(5, 8);
             Console.WriteLine("Area of rect: {0}", rectangle2.Area());
 
-            GetResultFunctional1();
+            // GetResultFunctional1();
+
+            MoreFunctionalStuff main2 = new MoreFunctionalStuff();
+            main2.Main2();
         }
 
         private static string GetResult()

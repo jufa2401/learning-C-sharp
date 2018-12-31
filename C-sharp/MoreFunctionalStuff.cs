@@ -10,7 +10,7 @@ namespace C_sharp
         Func<int, int, int> addNums = (x, y) => x + y;
         Func<int, bool> isZero = n => n == 0;
 
-        void Main2(string[] args)
+        public void Main2()
         {
             Console.WriteLine(addOne(5)); // 6
             Console.WriteLine(isZero(addNums(-5,5))); // True
@@ -21,11 +21,14 @@ namespace C_sharp
 
 
             bool[] bools = {false, true, false, false, false, true};
-            bools.Count(boolean => boolean == false); // 4
-            bools.Count(boolean => boolean == true); // 2
+            System.Console.WriteLine(bools.Count(boolean => boolean == false)); // 4
+            System.Console.WriteLine(bools.Count(boolean => boolean == true));  // 2
+
+            System.Console.WriteLine(GetSalutation(13));            
+            System.Console.WriteLine(Greeting());
         }
         // Expressions are better than statements - No mutables :)
-        public static string GetSalutation (int hour) => hour < 12 ? "Good Morning" : "Good Afternoon";
+        public string GetSalutation (int hour) => hour < 12 ? "Good Morning" : "Good Afternoon";
 
 
         public string Greeting() => new StringBuilder()
