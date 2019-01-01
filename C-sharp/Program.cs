@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using C_sharp;
+using System.Collections.Immutable;
 
 namespace learningC_sharp
 {
@@ -32,6 +33,31 @@ namespace learningC_sharp
 
             MoreFunctionalStuff main2 = new MoreFunctionalStuff();
             main2.Main2();
+
+            List<Entry> entries = new List<Entry>(
+                new Entry[] {
+                new Entry(6,25),
+                new Entry(10,28),
+                new Entry(12,32),
+                new Entry(16,30),
+                new Entry(18,26)
+                }
+            );
+
+           ImmutableList<Entry> entries2 = ImmutableList.Create(
+                new Entry(6,25),
+                new Entry(10,28),
+                new Entry(12,32),
+                new Entry(16,30),
+                new Entry(18,26)
+           );
+
+
+
+            entries.Add(new Entry(18,200));
+            EntryTest test = new EntryTest();
+            var s = test.ImmutableLogProcessor(entries2);
+            s.ForEach(Console.WriteLine);
         }
 
         private static string GetResult()
